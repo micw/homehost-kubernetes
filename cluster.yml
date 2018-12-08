@@ -1,0 +1,19 @@
+---
+
+nodes:
+  - address: 192.168.1.101
+    user: root
+    role:
+      - controlplane
+      - etcd
+      - worker      
+
+network:
+  plugin: none
+
+ingress:
+  provider: none
+
+addons_include:
+  - https://raw.githubusercontent.com/micw/multus-cni/feature/install-cni-binaries/images/multus-daemonset.yml
+  - https://raw.githubusercontent.com/intel/multus-cni/master/images/flannel-daemonset.yml
